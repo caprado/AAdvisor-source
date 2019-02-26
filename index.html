@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Athens Advisor | Database</title>
+  <link rel='shortcut icon' type='image/x-icon' href='/src/assets/img/favicon.ico' />
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400|Nunito:400,800" as="style"
+    onload="this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/open-weather/2.0.0/openweather.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+  <script src="/src/vendor/loadCSS.js"></script>
+
+  <meta name="description" content="Athens Advisor Database">
+  <meta name="keywords" content="Vue,JavaScript,WordPress,REST API">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=1350"> -->
+  <meta property="og:site_name" content="Athens Advisor" />
+  <meta property="og:locale" content="en_us" />
+  <meta property="og:description" content="Athens Advisor Database" />
+  <meta property="og:title" content="Athens Advisor" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="About" />
+  <meta name="twitter:description" content="Athens Advisor Database" />
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="https://cdn.jsdelivr.net/vue/2.0.0-rc/vue.min.js"></script>
+  <script src="https://cdn.ravenjs.com/3.26.4/vue/raven.min.js" crossorigin="anonymous"></script>
+  <script src="https://browser.sentry-cdn.com/4.6.3/bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    Raven.config('https://e4567b23bf3a45a58628d3244d1a704d@sentry.io/1303308').install();
+    Sentry.init({
+    dsn: 'https://e4567b23bf3a45a58628d3244d1a704d@sentry.io/1303308',
+    beforeSend(event) {
+      // Check if it is an exception, if so, show the report dialog
+      if (event.exception) {
+        Sentry.showReportDialog();
+      }
+      return event;
+    }
+  });
+  </script>
+  <script src="/dist/build.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.content-col-full {
+  float:left;
+  width:100%;
+  padding:1%;
+  border: 1px dotted #ccc;
+  background: #fff;
+  margin-bottom: 1%;
+}
+
+.content-col-main {
+  border-bottom: solid 5px red;
+  border-right: 1px dotted #ccc;
+  border-top: 1px dotted #ccc;
+  border-left: 1px dotted #ccc;
+  float: left;
+  width: 66%;
+  padding: 1%;
+  background: #fff;
+  margin-bottom: 1%;
+}
+
+.content-col-side {
+ padding: 4%;
+ float:right;
+ width:29%;
+ border: 1px dotted #ccc;
+ background: #fff;
+ margin-bottom: 1%;
+}
+
+img { /* Makes sure your images stay within their columns */
+ max-width: 100%;
+ width: auto;
+ height: auto;
+}
+
+.fa-file {
+    font-family: "Font Awesome 5 Free";
+    font-size: 35px;
+    vertical-align: middle;
+    padding-right: 10px;
+    line-height: 45px;
+}

@@ -1,0 +1,25 @@
+/* Device Media Queries fixes 
+ * 
+-------------------------------------------------------------- */
+
+
+// iPad Pro and devices with a width of 1024px
+@media all and (max-width: 1024px) { 
+    #at-side-menu-nav .menu-item {
+        font-size: 0.75rem!important;
+    }
+    #wrapper {
+        width: 77%!important;
+        margin-left: 15%!important;
+    }
+    .col-sm-7 {
+        width: 63%!important;
+        padding: 2%!important;
+    }
+    .col-sm-5 {
+        width: 30%!important;
+        float: left!important;
+        padding: 1%!important;
+        padding-top: 9.2%!important;
+    }
+ }
