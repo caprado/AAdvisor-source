@@ -1,4 +1,11 @@
 # AAdvisor-source
 
+## Setup
+```
+npm install
+```
 
-npm install webpack-dev-server@2.x will fix issue with web dev locking up when updating.
+Fix issue with web dev locking up when updating.
+```
+npm install webpack-dev-server@2.x
+```
