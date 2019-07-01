@@ -2,7 +2,7 @@
   "name": "athens-advisor",
   "description": "Athens Services Intranet",
   "version": "0.2.2",
-  "license": "C",
+  "license": "UNLICENSED",
   "author": "Christian Prado <chris.a.prado@me.com> (https://athensservices.com)",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --host 0.0.0.0 --allowed-hosts 192.168.1.220",
