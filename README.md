@@ -1,4 +1,4 @@
-# AAdvisor-source
+# AAdvisor-source [![Build Status](https://travis-ci.com/caprado/AAdvisor-source.svg?token=eHB9Pb3YbE7dNiStpZ9z&branch=master)](https://travis-ci.com/caprado/AAdvisor-source)
 
 ## Setup
 ```
