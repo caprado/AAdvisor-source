@@ -1,9 +1,9 @@
 <template>
   <div>
+    <a :href='`${ REST_URL }wp-admin/post-new.php`'>Add City</a>
     <ul>
       <Card v-for="post in orderedPost" :post="post" :key="post.id" />
     </ul>
-
     <Pagination :currentPage="parseInt(page)" :totalPages="parseInt(totalPages)"></Pagination>
   </div>
 </template>
@@ -53,23 +53,6 @@
     },
 
     methods: {
-      openMenu() {
-        this.$emit('openMenu');
-        this.isSideBarOpen = true;
-        document.getElementById('at-side-menu-wrapper').style.display = 'none';
-        document.getElementById('at-open-side-menu-button').style.display = 'none';
-        document.getElementById('at-close-side-menu-button').style.display = 'block';
-        document.getElementById('at-side-menu-wrapper').classList.remove("mystyle");
-      },
-      closeMenu() {
-        this.$emit('closeMenu');
-        this.isSideBarOpen = false;
-        document.getElementById('at-side-menu-wrapper').style.display = 'block';
-        document.getElementById('at-close-side-menu-button').style.display = 'none';
-        document.getElementById('at-open-side-menu-button').style.display = 'block';
-        document.getElementById('at-side-menu-wrapper').classList.add("mystyle");
-      },
-
       getPosts: async function () {
           let response;
 
@@ -86,13 +69,9 @@
 
           this.posts = await this.getFeaturedImages(response.data);
 
-
-          // This was added "IF" statement
           if (this.totalPages >= 2) {
             this.getAdjacentPageData();
           }
-          // ^^
-
           bus.$emit('toggleLoading', false);
         },
 

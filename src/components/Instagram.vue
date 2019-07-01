@@ -2,16 +2,17 @@
   <div class="container-social">
     <div class="social_bar">
       <div class="twitter-container">
-        <a class="twitter-timeline" href="https://twitter.com/AthensServices" data-widget-id="589209632482021376"></a>
+        <!-- <a class="twitter-timeline" href="https://twitter.com/AthensServices" data-widget-id="589209632482021376"></a> -->
+        <a class="twitter-timeline" data-height="700" href="https://twitter.com/AthensServices?ref_src=twsrc%5Etfw">Tweets by @AthensServices</a>
+        <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
       </div>
 
       <div class="instagram" id="instafeed">
         <h1 class="timeline-Header-title instagram-block">Instagram Posts <span class="timeline-Header-instagram">by <a
-              href="https://twitter.com/AthensServices">@AthensServices</a></span></h1>
-        <vue-instagram token="7717261160.1677ed0.0f1fcc60a9f04dc287f8c3cd10e3845e" :count="6" mediaType="image">
+              href="https://www.instagram.com/athensservices/?hl=en">@AthensServices</a></span></h1>
+        <vue-instagram token="7717261160.1677ed0.cc866369d5e046919460de3b7d149a57" :count="6" mediaType="image">
           <template slot="feeds" slot-scope="props">
             <!-- <li class="fancy-list"> {{ props.feed.user.username }} </li> -->
-
             <div class="card">
               <div class="card-image">
                 <figure class="image is-4by3"><img :src="props.feed.images.standard_resolution.url" alt="Image"></figure>
@@ -72,9 +73,6 @@ setTimeout(function(){
 
 }, 500);
 
-
-
-
   import Vue from 'vue'
   import axios from 'axios';
   import VueInstagram from 'vue-instagram'
@@ -129,5 +127,12 @@ setTimeout(function(){
     color: #2b7bb9;
     text-decoration: none;
     outline: 0;
+  }
+
+  .fancy-alert {
+    padding: 25px 0px;
+  }
+  img {
+    object-fit: cover;
   }
 </style>

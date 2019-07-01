@@ -3,7 +3,6 @@ import VueRouter from 'vue-router';
 import Feed from './views/Feed';
 import FourOFour from './views/FourOFour';
 import Post from './views/Post';
-import Updater from './components/Updater';
 import Home from './components/Home';
 import Instagram from './components/Instagram';
 import bus from './bus';
@@ -18,12 +17,12 @@ const routes = [
   },
   {
     name: 'Cities',
-    path: '/Cities',
+    path: '/cities',
     component: Feed
   },
   {
     name: 'post',
-    path: '/City/:slug',
+    path: '/city/:slug',
     component: Post
   },
   {
@@ -39,26 +38,21 @@ const routes = [
   {
     path: '*',
     redirect: '/404'
-  },
-  {
-    name: 'test',
-    path: '/test',
-    component: Instagram
   }
+  // {
+  //   name: 'test',
+  //   path: '/test',
+  //   component: Instagram
+  // }
 
 ];
-
-
 
 const router = new VueRouter({
   mode: 'history',
   routes
 });
 
-
-
 router.afterEach((to, from) => {
-
   //-- Bump the key on App component to force component to update on route change.
   bus.$emit('bumpViewKey');
 })

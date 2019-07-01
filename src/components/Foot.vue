@@ -1,7 +1,7 @@
 <template>
   <footer>
-    &copy; <a href="https://athensservices.com">Athens Advisor</a>
-    // 1.2~Stable
+    <!-- &copy; <a href="https://athensservices.com">Athens Advisor</a>
+    // 1.2~Stable -->
   </footer>
 </template>
 

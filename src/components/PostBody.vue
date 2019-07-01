@@ -3,16 +3,16 @@
 </template>
 
 <script>
-export default {
-  name: 'PostBody',
+  export default {
+    name: 'PostBody',
 
-  props: {
-    content: {
-      type: String,
-      required: true
+    props: {
+      content: {
+        type: String,
+        required: true
+      }
     }
   }
-}
 </script>
 
 <style lang="scss">
@@ -41,12 +41,14 @@ export default {
       height: 100%;
     }
   }
+
   tr {
     border-bottom: 1px solid #000000;
   }
+
   .content-col-side {
     background-color: #ebebeb;
+    position: fixed;
+    right: 0%;
   }
-
-  
 </style>

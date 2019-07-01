@@ -6,31 +6,26 @@
           <router-link to="/" tag="a">
             <img src="https://athensservices.com/wp-content/uploads/2018/10/Athens-Advisor-logo-1-color-white.png" class="at-logo-image"
               alt="Athens Services" width="100" height="31" style="display: inline;">
-            <!-- <img src="https://athensservices.com/wp-content/uploads/2018/10/Athens-Advisor-logo-1-color-white.png" class="at-logo-image"
-              alt="Athens Services" width="150" height="31" style="display: inline;"> -->
           </router-link>
         </div>
       </div>
       <div id="at-side-menu-content">
         <div id="at-side-menu-scroller">
           <nav id="at-side-menu-nav" class="at-mobile-nav">
-            <ul id="at-side-menu-menu" class="menu">
+            <ul id="at-side-menu-menu" class="menu" style="overflow-y: scroll;height: 92vh;">
               <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="https://athensservices.com" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
+                  href="https://athensservices.com" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
                   Corp Site</a></li>
               <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="https://la.athensservices.com" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
+                  href="https://la.athensservices.com" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
                   LA</a></li>
               <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="https://athenspasadena.com" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
+                  href="http://athenspasadena.com" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
                   Pasadena</a></li>
               <hr>
               <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="https://twitter.com/AthensServices" class="menu-link main-menu-link"><span class="at-menu-icon fab fa-twitter"></span>Athens
+                  href="https://twitter.com/AthensServices" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fab fa-twitter"></span>Athens
                   Twitter</a></li>
-              <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="https://www.facebook.com/pages/Athens-Services/169594639722134" class="menu-link main-menu-link"><span class="at-menu-icon fab fa-facebook-f"></span>Athens
-                  Facebook</a></li>
               <hr>
               <input type="text" placeholder="Search City.." v-model="searchText" />
 
@@ -38,24 +33,23 @@
                 <router-link to="/Cities" tag="a">View All Cities</router-link>
               </li>
 
-              <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"
-                v-for="post in filteredPost" :post="post" :key="post.id">
-                <router-link :to="{
-                  name: 'post',
-                  params: {
-                    slug: post.slug,
-                    title: post.title.rendered
-                    }
-                  }" v-html="post.title.rendered">
-                </router-link>
-              </li>
+                <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"
+                  v-for="post in filteredPost" :post="post" :key="post.id">
+                  <router-link :to="{
+                    name: 'post',
+                    params: {
+                      slug: post.slug,
+                      title: post.title.rendered
+                      }
+                    }" v-html="post.title.rendered">
+                  </router-link>
+                </li>
+
             </ul>
           </nav>
         </div>
       </div>
-      <div id="at-side-menu-toggle">
-        <!-- <div id="at-close-side-menu-button" @click="closeMenu"></div> -->
-      </div>
+      <div id="at-side-menu-toggle"></div>
       <div id="gp-open-side-menu-button"></div>
     </div>
 
@@ -69,17 +63,16 @@
             <nav id="at-main-header-primary-nav" class="at-nav">
               <ul id="at-main-header-primary-menu" class="menu">
                 <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-custom menu-item-object-custom current-menu-item acurrent_page_item menu-item-home">
-                  <router-link to="/" tag="a">Home</router-link></li>
-                <!-- <li class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
-              <a href="#" class="menu-link main-menu-link">Links</a>
-            </li> -->
+                <router-link to="/" tag="a">Home</router-link></li>
+                <li v-for="(id, index) in menu" v-bind:key="index" :id="id" class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a :href='`${ id.url }`' :target="setTarget()">{{ id.title }}</a>
+                </li>
                 <li class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
-                  <a :href='`${ REST_URL }wp-admin/post-new.php`'><i class="fa fa-plus"></i></a>
+                  <a :href='`${ REST_URL }wp-admin/nav-menus.php?action=edit&menu=5`'><i class="fa fa-plus"></i></a>
                 </li>
                 <li class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
                   <a href="#" class="date-disabled">{{getFormattedDate(new Date())}}</a>
                 </li>
-                <li class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category"></li>
               </ul>
             </nav>
           </div>
@@ -92,19 +85,17 @@
         <div class="at-clear"></div>
       </header>
     </div>
-
-    <Breadcrumb />
+    <!-- <Breadcrumb /> -->
   </div>
 </template>
 
 <script>
-  import Breadcrumb from '../components/Breadcrumb';
   import bus from '../bus';
   import ajax from '../mixins/ajax';
   import Card from '../components/Card';
   import Pagination from '../components/Pagination';
   import _ from 'lodash';
-
+  import axios from "axios";
 
   export default {
     name: 'TopBar',
@@ -117,7 +108,10 @@
         searchText: "",
         posts: [],
         page: 1,
-        totalPages: null
+        totalPages: null,
+        menu: [],
+        response: "",
+        pageMenu: []
       }
     },
 
@@ -125,17 +119,19 @@
       orderedPost: function () {
         return _.orderBy(this.posts, 'slug')
       },
+
       filteredPost: function () {
         var self = this;
         return _.orderBy(this.posts, 'slug').filter(function (post) {
           return _.includes(post.slug, self.searchText);
         })
-      }
+      },
     },
 
     mounted: function () {
       this.getPosts();
-    },
+      this.getMenu();
+      },
 
     created: function () {
       if (this.$route.name === 'page') {
@@ -150,15 +146,16 @@
         document.getElementById('at-side-menu-wrapper').style.display = 'none';
         document.getElementById('at-open-side-menu-button').style.display = 'none';
         document.getElementById('at-close-side-menu-button').style.display = 'block';
-        document.getElementById('at-side-menu-wrapper').classList.remove("mystyle");
+        document.getElementById('at-side-menu-wrapper').classList.remove("hidden-block");
       },
+
       closeMenu() {
         this.$emit('closeMenu');
         this.isSideBarOpen = false;
         document.getElementById('at-side-menu-wrapper').style.display = 'block';
         document.getElementById('at-close-side-menu-button').style.display = 'none';
         document.getElementById('at-open-side-menu-button').style.display = 'block';
-        document.getElementById('at-side-menu-wrapper').classList.add("mystyle");
+        document.getElementById('at-side-menu-wrapper').classList.add("hidden-block");
       },
 
       getPosts: async function () {
@@ -170,86 +167,101 @@
             );
             this.totalPages = response.headers['x-wp-totalpages'];
           } catch (error) {
-            bus.$emit('showUpdater', 'Are you sure that\'s a valid endpoint?');
-            bus.$emit('toggleLoading', false);
+              bus.$emit('showUpdater', 'Are you sure that\'s a valid endpoint?');
+              bus.$emit('toggleLoading', false);
             return;
           }
 
           this.posts = await this.getFeaturedImages(response.data);
+          // console.log("Post:", this.posts, "Pages: ", this.totalPages);
 
-
-          // This was added "IF" statement
+          // Added if statement
           if (this.totalPages >= 2) {
             this.getAdjacentPageData();
           }
-          // ^^
 
           bus.$emit('toggleLoading', false);
         },
 
-        getAdjacentPageData: async function (prevPage = false) {
+      setTarget: function () {
+          return (this.enabled = "_blank");
+      },
 
-            let page = prevPage === true ?
-              parseInt(this.page) - 1 :
-              parseInt(this.page) + 1;
+      getAdjacentPageData: async function (prevPage = false) {
 
-            let response;
+          let page = prevPage === true ?
+            parseInt(this.page) - 1 :
+            parseInt(this.page) + 1;
 
-            if (page > 0) {
+          let response;
+
+          if (page > 0) {
+            try {
+              response = await this.get(
+                `/posts?per_page=${POSTS_PER_PAGE}&page=${page}`,
+              );
+            } catch (error) {
+              console.error(error);
+            }
+
+            // response.data.forEach((post) => {
+            //   if (post.featured_media > 0) return;
+            //   this.get(`/media/${post.featured_media}`);
+            // });
+            // 
+            // Don't want to use above snippet for now. This removes the images on the main city feed showing up
+            // Mostly removed to stop console errors for response.data.forEach returning no data due to missing featured images on post
+          }
+
+          if (!prevPage) {
+            this.getAdjacentPageData(true);
+          }
+        },
+
+      getFeaturedImages: function (posts) {
+        return new Promise((resolve) => {
+          let requests = posts.map((post) => {
+            return new Promise(async (resolve) => {
+              let response;
+
               try {
+
+                if (post.featured_media <= 0) {
+                  throw "No image.";
+                }
+
                 response = await this.get(
-                  `/posts?per_page=${POSTS_PER_PAGE}&page=${page}`,
+                  `/media/${post.featured_media}`
                 );
+                post.featured_image = response.data.media_details.sizes['medium'].source_url;
               } catch (error) {
-                console.error(error);
+                post.featured_image = null;
               }
 
-              // response.data.forEach((post) => {
-              //   if (post.featured_media > 0) return;
-              //   this.get(`/media/${post.featured_media}`);
-              // });
-              
-              // Don't want to use above snippet for now. This removes the images on the main city feed showing up
-              // Mostly removed to stop console errors for response.data.forEach returning no data
-            }
-
-            if (!prevPage) {
-              this.getAdjacentPageData(true);
-            }
-          },
-
-          getFeaturedImages: function (posts) {
-            return new Promise((resolve) => {
-              let requests = posts.map((post) => {
-                return new Promise(async (resolve) => {
-                  let response;
-
-                  try {
-
-                    if (post.featured_media <= 0) {
-                      throw "No image.";
-                    }
-
-                    response = await this.get(
-                      `/media/${post.featured_media}`
-                    );
-                    post.featured_image = response.data.media_details.sizes['medium'].source_url;
-                  } catch (error) {
-                    post.featured_image = null;
-                  }
-
-                  resolve(post);
-                });
-              });
-
-              Promise.all(requests).then((posts) => resolve(posts));
+              resolve(post);
             });
-          }
+          });
+
+          Promise.all(requests).then((posts) => resolve(posts));
+        });
+      },
+
+      // Added because rest api already configured via mixins. This was requested after I built out the api as well as async function that included the REST_API variable
+      getMenu: function () { axios.get("https://api.revolveyourwaste.com/wp-json/wp-api-menus/v2/menus/5", {})
+        .then(response => {
+          var menu = [];
+          this.menu = response.data.items;
+          }, 
+        error => {
+          console.log('===================================================');
+          console.log('Looks like the menu ID changed or has been deleted.');
+          console.log('===================================================');
+          console.error(error);
+        });
+      },
     },
 
-    components: {
-      Breadcrumb
-    }
+    components: {}
   }
 </script>
 
@@ -261,7 +273,7 @@
   }
 
   #at-standard-header {
-    background-color: #e4001c;
+    background-color: #c81525;
     height: 99px;
     position: relative;
     clear: both;
@@ -471,9 +483,6 @@
     transition: all .5s ease;
   }
 
-  /* #at-global-wrapper.at-active-desktop-side-menu {
-    padding-left: 10%;
-} */
   @media only screen and (min-width: 1200px) {
     #at-global-wrapper.at-active-desktop-side-menu {
       padding-left: 15%;
@@ -547,14 +556,13 @@
   @media only screen and (min-width: 992px) {
     #at-side-menu-logo {
       display: block;
-      background-color: #e4001c;
+      background-color: #c81525;
     }
   }
 
   #at-side-menu-logo {
-        height: 99px;
+    height: 99px;
     overflow: hidden;
-    /* padding: 30px 20px; */
     padding: 10px 29px;
   }
 
@@ -681,9 +689,9 @@
     transition: all .5s ease;
   }
 
-  #gp-open-side-menu-button:before {
+  /* #gp-open-side-menu-button:before {
     content: '\f057';
-  }
+  } */
 
   hr {
     border-bottom: 1px solid #ffffff;
@@ -714,14 +722,9 @@
   }
 
   @media all and (max-width: 940px) {
-
-    /* #at-global-wrapper.at-active-desktop-side-menu #at-side-menu-wrapper[data-v-7d97589c] {
-    width: 0%;
-  } */
     #at-global-wrapper.at-active-desktop-side-menu #at-open-side-menu-button {
       opacity: 1;
     }
-
   }
 
   #at-close-side-menu-button {
@@ -784,7 +787,7 @@
       padding-left: 15px;
     }
 
-    .mystyle {
+    .hidden-block {
       display: block !important;
       width: 60% !important;
     }

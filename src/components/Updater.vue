@@ -12,9 +12,7 @@
       <router-link to="/city" tag="button">Go Back</router-link>
     </form>
    
-    <!-- <a
-      v-if="!error"
-      @click="close">Nevermind.</a> -->
+    <!-- <a v-if="!error" @click="close">Nevermind.</a> -->
       <a href="" class="is-disabled">e4567b23bf3a45a58628d3244d1a704d@/1303308</a>
   </div>
 </template>
@@ -56,69 +54,65 @@ export default {
       });
 
       this.$store.commit('cache/wipe');
-
       this.$store.commit('updateEndpoint', this.updatedEndpoint);
-
       this.$router.push('/posts');
-
       this.$emit('close');
     }
   }
 }
-
 </script>
 
 <style scoped lang="scss">
-  .is-disabled {
-    pointer-events: none;
-    user-select: none;
-    opacity: 0.6;
-  }
-  div {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background: rgba($white, .99);
-    z-index: 1;
-  }
+.is-disabled {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.6;
+}
+div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: rgba($white, .99);
+  z-index: 1;
+}
 
-  form {
-    text-align: center;
-    width: 350px;
-    max-width: calc(100% - 2rem);
-  }
+form {
+  text-align: center;
+  width: 350px;
+  max-width: calc(100% - 2rem);
+}
 
-  button {
-    width: 100%;
-    margin-bottom: .75rem;
-  }
+button {
+  width: 100%;
+  margin-bottom: .75rem;
+}
 
-  input {
-    border: 2px solid $gray--mediumLight;
-  }
+input {
+  border: 2px solid $gray--mediumLight;
+}
 
-  a {
-    color: $gray--medium;
+a {
+  color: $gray--medium;
 
-    &:hover {
-      color: $gray;
-    }
+  &:hover {
+    color: $gray;
   }
+}
 
-  span {
-    color: $salmon;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-  pre {
-    padding: 7px;
-    background-color: #cecece;
-  }
+span {
+  color: $salmon;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+pre {
+  padding: 7px;
+  background-color: #cecece;
+}
 </style>
 

@@ -35,23 +35,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  div {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background: rgba($gray, .99);
-    color: $white;
-    z-index: 1;
-  }
+div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: rgba($gray, .99);
+  color: $white;
+  z-index: 1;
+}
 
-  span {
-    margin-bottom: 1rem;
-    font-size: $medium-font-size;
-  }
+span {
+  margin-bottom: 1rem;
+  font-size: $medium-font-size;
+}
 </style>

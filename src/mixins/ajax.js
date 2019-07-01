@@ -3,7 +3,6 @@ import Axios from 'axios';
 export default {
 
   methods: {
-
     /**
      * Get response from memory, if it exists. Otherwise, AJAX.
      *

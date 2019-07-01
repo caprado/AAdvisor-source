@@ -1,12 +1,10 @@
 <template>
   <div>
-    <router-link to="/Cities" tag="a">View All Cities</router-link>
+    <router-link to="/Cities" tag="a">View All Cities</router-link> | <a :href='`${ REST_URL }wp-admin/post-new.php`'>Add City</a>
       <header>
-        <!-- <h1 v-html="title"></h1> -->
-
         <ul>
           <li>
-            <strong>{{ title }}</strong> 
+            <strong style="color: black;" v-html="title"></strong> 
           </li>
           <li>
             <span>Added {{ date }}</span> | <a style="display: inline;" :href='`${ REST_URL }wp-admin/post.php?post=` + post.id +`&action=edit`'>Edit</a>
@@ -53,6 +51,7 @@
       this.featured_image = await this.getFeaturedImage(this.post.featured_media);
 
       bus.$emit('toggleLoading', false);
+      this.fileIconAdd();
     },
 
     methods: {
@@ -86,7 +85,18 @@
         }
 
         return response.data.media_details.sizes['medium'].source_url;
-      }
+      },
+
+      fileIconAdd: function () {
+        var el = document.getElementsByClassName('menu-sub');
+
+        for (var i = 0; i < el.length; i++) {
+          var files = el[i].getElementsByTagName('li');
+          for (var y = 0; y < files.length; y++) {
+            files[y].classList.add('files');
+          }
+        }
+      },
     },
 
     components: {
@@ -124,7 +134,6 @@
   }
 
   li {
-
     & + & {
       &:before {
         @include media($mobile) {
@@ -146,7 +155,7 @@
   }
 
   a {
-    display: block;
+    display: inline-block;
     margin-bottom: 1rem;
   }
 
@@ -158,5 +167,15 @@
     margin: 0;
     margin-top: 5px;
     border: 1px solid gray;
+  }
+
+  table {
+    width: 100%!important;
+    table-layout: auto!important;
+  }
+  
+  strong {
+    color: #e4001c;
+    font-weight: 700;
   }
 </style>

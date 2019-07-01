@@ -3,6 +3,7 @@ import VueAnalytics from 'vue-analytics';
 import App from './App.vue';
 import router from './router';
 import utils from './mixins/utils';
+import 'es6-promise/auto'
 import store from './store';
 
 Vue.mixin(utils);
