@@ -35,6 +35,8 @@ module.exports = {
                 {
                   loader: 'sass-resources-loader',
                   options: {
+                    modules: true,
+                    localIdentName: '[local]_[hash:base64:8]',
                     resources: [
                       path.resolve(__dirname, './src/assets/scss/_variables.scss'),
                       path.resolve(__dirname, './src/assets/scss/_mixins.scss'),
@@ -45,6 +47,19 @@ module.exports = {
             }
           }
         }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.js$/,

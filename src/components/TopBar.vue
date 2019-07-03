@@ -23,16 +23,16 @@
                   href="http://athenspasadena.com" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
                   Pasadena</a></li>
               <hr>
-              <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
+              <!-- <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
                   href="https://twitter.com/AthensServices" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fab fa-twitter"></span>Athens
                   Twitter</a></li>
               <hr>
-              <input type="text" placeholder="Search City.." v-model="searchText" />
+              <input type="text" placeholder="Search City.." v-model="searchText" /> -->
 
               <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
                 <router-link to="/Cities" tag="a">View All Cities</router-link>
               </li>
-
+              <hr>
                 <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"
                   v-for="post in filteredPost" :post="post" :key="post.id">
                   <router-link :to="{
