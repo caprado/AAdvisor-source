@@ -120,9 +120,16 @@
     }
   }
 
+
   @media (max-width: 1024px) {
     .col-sm-7 {
         width: 100% !important;
+    }
+
+    .content-col-full {
+        border: none;
+        border-top: 2px solid #ccc;
+        background: #fff;
     }
 
     #at-side-menu-wrapper {
@@ -130,14 +137,23 @@
     }
 
     #wrapper {
-      width: 85% !important;
-      margin-left: 15% !important;
+      // width: 85% !important;
+      // margin-left: 15% !important;
+      width: 100% !important;
+      margin-left: 0% !important;
     }
 
     .col-sm-5{
       display: none;
     }
  }
+
+@media (min-width:971px) and (max-width:1024px) {
+    .col-sm-7 {
+        width: 85% !important;
+        margin-left: 12%;
+    }
+  }
 
   @media (min-width: 1025px) {
     #wrapper {

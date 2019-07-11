@@ -22,16 +22,17 @@ body {
   float:left;
   width:100%;
   padding:1%;
-  border: 1px dotted #ccc;
+  border: 1px solid #ccc;
+  // border: 1px dotted #ccc;
   background: #fff;
   margin-bottom: 1%;
 }
 
 .content-col-main {
   border-bottom: solid 5px red;
-  border-right: 1px dotted #ccc;
-  border-top: 1px dotted #ccc;
-  border-left: 1px dotted #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
   float: left;
   width: 66%;
   padding: 1%;
@@ -43,7 +44,7 @@ body {
   padding: 1.5%;
   float: right;
   width: 20%;
-  border: 1px dotted #ccc;
+  border: 1px solid #ccc;
   background: #fff;
   margin-bottom: 1%;
 }

@@ -1,22 +1,25 @@
 <template>
-  <div>
-    <router-link to="/Cities" tag="a">View All Cities</router-link> | <a :href='`${ REST_URL }wp-admin/post-new.php`'>Add City</a>
-      <header>
-        <ul>
-          <li>
-            <strong style="color: black;" v-html="title"></strong> 
-          </li>
-          <li>
-            <span>Added {{ date }}</span> | <a style="display: inline;" :href='`${ REST_URL }wp-admin/post.php?post=` + post.id +`&action=edit`'>Edit</a>
-          </li>
-        </ul>
-        <hr>
-      </header>
-        <img
-          v-if="featured_image"
-          :src="featured_image"
-        >
-      <PostBody :content="content"></PostBody>
+  <div id="city-template">
+    <div class="low-res"><h3 style="text-align:center;">This device is not supported.</h3></div>
+      <div class="post-data">
+      <router-link to="/Cities" tag="a">View All Cities</router-link> | <a :href='`${ REST_URL }wp-admin/post-new.php`'>Add City</a>
+        <header>
+          <ul>
+            <li>
+              <strong style="color: black;" v-html="title"></strong> 
+            </li>
+            <li>
+              <span>Added {{ date }}</span> | <a style="display: inline;" :href='`${ REST_URL }wp-admin/post.php?post=` + post.id +`&action=edit`'>Edit</a>
+            </li>
+          </ul>
+          <hr>
+        </header>
+          <img
+            v-if="featured_image"
+            :src="featured_image"
+          >
+        <PostBody :content="content"></PostBody>
+      </div>
   </div>
 </template>
 
@@ -177,5 +180,34 @@
   strong {
     color: #e4001c;
     font-weight: 700;
+  }
+  @media (max-width: 1024px) {
+    #city-template {
+      width: 85%;
+        margin-left: 15%;
+    }
+      #wrapper {
+      width: 100% !important;
+      margin-left: 0% !important;
+  }
+  }
+  @media (max-width: 970px) {
+    #city-template {
+        margin-left: 0%;
+        padding: 2%;
+    }
+    // #wrapper {
+    //     width: 100% !important;
+    //     margin-left: 0% !important;
+    // }
+  }
+  .low-res {display:none;}
+  @media (max-width: 414px) {
+    .post-data {
+      display: none;
+    }
+    .low-res {
+      display: block;
+    }
   }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div class="container-wrapper" >
     <div class="row">
-      <div class="col-sm-7" v-if="pages && pages.length > 1">
-      <div class="announcements col-sm-8" v-for="pages of pages">
-        <div class="post-container">
-          <h3>{{pages.title.rendered}}</h3>
-              <div class="post-body" v-html="pages.content.rendered"></div>
+      <div class="col-sm-7" v-if="pages && pages.length > 0">
+        <div class="announcements col-sm-8" v-for="pages of pages">
+          <div class="post-container">
+            <h3>{{pages.title.rendered}}</h3>
+                <div class="post-body" v-html="pages.content.rendered"></div>
+          </div>
         </div>
-      </div>
       </div>
       <div class="annoucements col-sm-8" v-else>
         <div class="post-container">
@@ -15,11 +15,11 @@
           <div class="post-body"></div>
         </div>
       </div>
-    <div class="col-sm-5">
-      <Instagram></Instagram>
+      <div class="col-sm-5">
+        <Instagram></Instagram>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -42,7 +42,7 @@ export default {
 
   // Fetches pages when the component is created.
   created() {
-    axios.get(`https://api.revolveyourwaste.com/wp-json/wp/v2/pages`)
+    axios.get(`http://athensadvisor.athensservices.com:81/wp-json/wp/v2/pages`)
     .then(response => {
       this.pages = response.data
     })

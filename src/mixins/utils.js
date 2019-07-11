@@ -16,7 +16,7 @@ export default {
         "November",
         "December"
       ],
-      REST_URL: 'https://api.revolveyourwaste.com/'
+      REST_URL: 'http://athensadvisor.athensservices.com:81/'
     }
   },
 

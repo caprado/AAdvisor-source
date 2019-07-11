@@ -1,7 +1,7 @@
 {
   "name": "athens-advisor",
   "description": "Athens Services Intranet",
-  "version": "0.2.2",
+  "version": "0.3.2",
   "license": "UNLICENSED",
   "author": "Christian Prado <chris.a.prado@me.com> (https://athensservices.com)",
   "scripts": {

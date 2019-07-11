@@ -4,7 +4,6 @@ import Feed from './views/Feed';
 import FourOFour from './views/FourOFour';
 import Post from './views/Post';
 import Home from './components/Home';
-import Instagram from './components/Instagram';
 import bus from './bus';
 
 Vue.use(VueRouter);
@@ -39,11 +38,6 @@ const routes = [
     path: '*',
     redirect: '/404'
   }
-  // {
-  //   name: 'test',
-  //   path: '/test',
-  //   component: Instagram
-  // }
 
 ];
 

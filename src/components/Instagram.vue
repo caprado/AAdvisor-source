@@ -28,7 +28,7 @@
                     <p class="subtitle is-6">@{{props.feed.user.username}}</p>
                   </div>
                 </div>
-                <div class="content" style="height: 100px; overflow: auto;">
+                <div class="content">  <!-- style="height: 100px; overflow: auto;" -->
                   {{props.feed.caption.text}}
                 </div>
               </div>
@@ -90,10 +90,10 @@ setTimeout(function(){
 
 <style scoped lang="scss">
   .container-social {
-    background-color: #ebebeb;
+    // background-color: #ebebeb;
     width: 100%;
-    padding: 3%;
-    border: 1px dotted #ccc;
+    // padding: 3%;
+    // border: 1px solid #ccc;
     margin-bottom: 1%;
     float: right;
   }
