@@ -4,8 +4,8 @@
       <div id="at-side-menu-logo">
         <div class="at-logo">
           <router-link to="/" tag="a">
-            <img src="https://athensservices.com/wp-content/uploads/2018/10/Athens-Advisor-logo-1-color-white.png" class="at-logo-image"
-              alt="Athens Services" width="100" height="31" style="display: inline;">
+            <img src="https://athensservices.com/wp-content/uploads/2018/10/Athens-Advisor-logo-1-color-white.png"
+              class="at-logo-image" alt="Athens Services" width="100" height="31" style="display: inline;">
           </router-link>
         </div>
       </div>
@@ -13,14 +13,20 @@
         <div id="at-side-menu-scroller">
           <nav id="at-side-menu-nav" class="at-mobile-nav">
             <ul id="at-side-menu-menu" class="menu" style="overflow-y: scroll;height: 92vh;">
-              <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="https://athensservices.com" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
+              <li
+                class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
+                <a href="https://athensservices.com" :target="setTarget()" class="menu-link main-menu-link"><span
+                    class="at-menu-icon fas fa-globe"></span>Athens
                   Corp Site</a></li>
-              <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="https://la.athensservices.com" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
+              <li
+                class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
+                <a href="https://la.athensservices.com" :target="setTarget()" class="menu-link main-menu-link"><span
+                    class="at-menu-icon fas fa-globe"></span>Athens
                   LA</a></li>
-              <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="http://athenspasadena.com" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
+              <li
+                class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
+                <a href="http://athenspasadena.com" :target="setTarget()" class="menu-link main-menu-link"><span
+                    class="at-menu-icon fas fa-globe"></span>Athens
                   Pasadena</a></li>
               <hr>
               <!-- <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
@@ -28,22 +34,25 @@
                   Twitter</a></li>
               <hr>
               <input type="text" placeholder="Search City.." v-model="searchText" /> -->
-
-              <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
+              <li
+                class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
                 <router-link to="/Cities" tag="a">View All Cities</router-link>
               </li>
+
               <hr>
-                <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"
-                  v-for="post in filteredPost" :post="post" :key="post.id">
-                  <router-link :to="{
+
+              <li
+                class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"
+                v-for="post in filteredPost" :post="post" :key="post.id">
+                <router-link :to="{
                     name: 'post',
                     params: {
                       slug: post.slug,
                       title: post.title.rendered
                       }
                     }" v-html="post.title.rendered">
-                  </router-link>
-                </li>
+                </router-link>
+              </li>
 
             </ul>
           </nav>
@@ -62,15 +71,20 @@
           <div class="at-nav-column">
             <nav id="at-main-header-primary-nav" class="at-nav">
               <ul id="at-main-header-primary-menu" class="menu">
-                <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-custom menu-item-object-custom current-menu-item acurrent_page_item menu-item-home">
-                <router-link to="/" tag="a">Home</router-link></li>
-                <li v-for="(id, index) in menu" v-bind:key="index" :id="id" class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
+                <li
+                  class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-custom menu-item-object-custom current-menu-item acurrent_page_item menu-item-home">
+                  <router-link to="/" tag="a">Home</router-link>
+                </li>
+                <li v-for="(id, index) in menu" v-bind:key="index" :id="id"
+                  class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
                   <a :href='`${ id.url }`' :target="setTarget()">{{ id.title }}</a>
                 </li>
-                <li class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
+                <li
+                  class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
                   <a :href='`${ REST_URL }wp-admin/nav-menus.php?action=edit&menu=5`'><i class="fa fa-plus"></i></a>
                 </li>
-                <li class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
+                <li
+                  class="at-content-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  menu-item menu-item-type-taxonomy menu-item-object-category">
                   <a href="#" class="date-disabled">{{getFormattedDate(new Date())}}</a>
                 </li>
               </ul>
@@ -131,7 +145,7 @@
     mounted: function () {
       this.getPosts();
       this.getMenu();
-      },
+    },
 
     created: function () {
       if (this.$route.name === 'page') {
@@ -159,64 +173,64 @@
       },
 
       getPosts: async function () {
-          let response;
+        let response;
 
-          try {
-            response = await this.get(
-              `/posts?per_page=${POSTS_PER_PAGE}&page=${this.page}`
-            );
-            this.totalPages = response.headers['x-wp-totalpages'];
-          } catch (error) {
-              bus.$emit('showUpdater', 'Are you sure that\'s a valid endpoint?');
-              bus.$emit('toggleLoading', false);
-            return;
-          }
-
-          this.posts = await this.getFeaturedImages(response.data);
-          // console.log("Post:", this.posts, "Pages: ", this.totalPages);
-
-          // Added if statement
-          if (this.totalPages >= 2) {
-            this.getAdjacentPageData();
-          }
-
+        try {
+          response = await this.get(
+            `/posts?per_page=${POSTS_PER_PAGE}&page=${this.page}`
+          );
+          this.totalPages = response.headers['x-wp-totalpages'];
+        } catch (error) {
+          bus.$emit('showUpdater', 'Are you sure that\'s a valid endpoint?');
           bus.$emit('toggleLoading', false);
-        },
+          return;
+        }
+
+        this.posts = await this.getFeaturedImages(response.data);
+        // console.log("Post:", this.posts, "Pages: ", this.totalPages);
+
+        // Added if statement
+        if (this.totalPages >= 2) {
+          this.getAdjacentPageData();
+        }
+
+        bus.$emit('toggleLoading', false);
+      },
 
       setTarget: function () {
-          return (this.enabled = "_blank");
+        return (this.enabled = "_blank");
       },
 
       getAdjacentPageData: async function (prevPage = false) {
 
-          let page = prevPage === true ?
-            parseInt(this.page) - 1 :
-            parseInt(this.page) + 1;
+        let page = prevPage === true ?
+          parseInt(this.page) - 1 :
+          parseInt(this.page) + 1;
 
-          let response;
+        let response;
 
-          if (page > 0) {
-            try {
-              response = await this.get(
-                `/posts?per_page=${POSTS_PER_PAGE}&page=${page}`,
-              );
-            } catch (error) {
-              console.error(error);
-            }
-
-            // response.data.forEach((post) => {
-            //   if (post.featured_media > 0) return;
-            //   this.get(`/media/${post.featured_media}`);
-            // });
-            // 
-            // Don't want to use above snippet for now. This removes the images on the main city feed showing up
-            // Mostly removed to stop console errors for response.data.forEach returning no data due to missing featured images on post
+        if (page > 0) {
+          try {
+            response = await this.get(
+              `/posts?per_page=${POSTS_PER_PAGE}&page=${page}`,
+            );
+          } catch (error) {
+            console.error(error);
           }
 
-          if (!prevPage) {
-            this.getAdjacentPageData(true);
-          }
-        },
+          // response.data.forEach((post) => {
+          //   if (post.featured_media > 0) return;
+          //   this.get(`/media/${post.featured_media}`);
+          // });
+          // 
+          // Don't want to use above snippet for now. This removes the images on the main city feed showing up
+          // Mostly removed to stop console errors for response.data.forEach returning no data due to missing featured images on post
+        }
+
+        if (!prevPage) {
+          this.getAdjacentPageData(true);
+        }
+      },
 
       getFeaturedImages: function (posts) {
         return new Promise((resolve) => {
@@ -247,17 +261,18 @@
       },
 
       // Added because rest api already configured via mixins. This was requested after I built out the api as well as async function that included the REST_API variable
-      getMenu: function () { axios.get("https://api.revolveyourwaste.com/wp-json/wp-api-menus/v2/menus/5", {})
-        .then(response => {
-          var menu = [];
-          this.menu = response.data.items;
-          }, 
-        error => {
-          console.log('===================================================');
-          console.log('Looks like the menu ID changed or has been deleted.');
-          console.log('===================================================');
-          console.error(error);
-        });
+      getMenu: function () {
+        axios.get("https://api.revolveyourwaste.com/wp-json/wp-api-menus/v2/menus/5", {})
+          .then(response => {
+              var menu = [];
+              this.menu = response.data.items;
+            },
+            error => {
+              console.log('===================================================');
+              console.log('Looks like the menu ID changed or has been deleted.');
+              console.log('===================================================');
+              console.error(error);
+            });
       },
     },
 
@@ -798,5 +813,4 @@
       display: block !important;
     }
   }
-  
 </style>
