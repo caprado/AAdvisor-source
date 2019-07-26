@@ -135,4 +135,7 @@ setTimeout(function(){
   img {
     object-fit: cover;
   }
+  .image.is-4by3 {
+    padding-top: 100%!important;
+  }
 </style>

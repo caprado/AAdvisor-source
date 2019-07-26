@@ -19,15 +19,11 @@
               <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
                   href="https://la.athensservices.com" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
                   LA</a></li>
-              <!-- <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="http://athenspasadena.com" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fas fa-globe"></span>Athens
-                  Pasadena</a></li> -->
               <hr>
-              <!-- <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"><a
-                  href="https://twitter.com/AthensServices" :target="setTarget()" class="menu-link main-menu-link"><span class="at-menu-icon fab fa-twitter"></span>Athens
-                  Twitter</a></li>
-              <hr>
-              <input type="text" placeholder="Search City.." v-model="searchText" /> -->
+                <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
+                  <router-link to="/Departments" tag="a">Departments</router-link>
+                </li>
+              <!-- <input type="text" placeholder="Search City.." v-model="searchText" /> -->
 
               <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
                 <router-link to="/Cities" tag="a">View All Cities</router-link>
@@ -85,7 +81,6 @@
         <div class="at-clear"></div>
       </header>
     </div>
-    <!-- <Breadcrumb /> -->
   </div>
 </template>
 

@@ -4,6 +4,8 @@ import Feed from './views/Feed';
 import FourOFour from './views/FourOFour';
 import Post from './views/Post';
 import Home from './components/Home';
+import Departments from './views/Departments';
+import DepartmentPost from './views/DepartmentPost';
 import bus from './bus';
 
 Vue.use(VueRouter);
@@ -25,9 +27,14 @@ const routes = [
     component: Post
   },
   {
-    name: 'page',
-    path: '/page/:page',
-    component: Feed
+    name: 'Departments',
+    path: '/departments/',
+    component: Departments
+  },
+  {
+    name: 'DepartmentPost',
+    path: '/Departments/:slug',
+    component: DepartmentPost
   },
   {
     name: '404',
@@ -38,7 +45,6 @@ const routes = [
     path: '*',
     redirect: '/404'
   }
-
 ];
 
 const router = new VueRouter({
