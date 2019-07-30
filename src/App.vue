@@ -1,11 +1,11 @@
 <template>
   <div id="app">
 
+    <Loading v-if="loadingOn" :message="loadingMessage" :showWheel="loadingWheel" />
     <TopBar @showUpdater="showUpdater = true" />
-
+    
     <div id="wrapper">
       <Updater v-if="showUpdater" :error="error" @close="showUpdater = false" />
-      <Loading v-if="loadingOn" :message="loadingMessage" :showWheel="loadingWheel" />
       <router-view :key="this.viewKey"></router-view>
     </div>
 
@@ -137,8 +137,6 @@
     }
 
     #wrapper {
-      // width: 85% !important;
-      // margin-left: 15% !important;
       width: 100% !important;
       margin-left: 0% !important;
     }

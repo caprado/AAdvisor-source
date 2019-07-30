@@ -23,23 +23,10 @@
                 <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
                   <router-link to="/Departments" tag="a">Departments</router-link>
                 </li>
-              <!-- <input type="text" placeholder="Search City.." v-model="searchText" /> -->
-
-              <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom">
-                <router-link to="/Cities" tag="a">View All Cities</router-link>
-              </li>
               <hr>
-                <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom"
-                  v-for="post in filteredPost" :post="post" :key="post.id">
-                  <router-link :to="{
-                    name: 'post',
-                    params: {
-                      slug: post.slug,
-                      title: post.title.rendered
-                      }
-                    }" v-html="post.title.rendered">
-                  </router-link>
-                </li>
+              <Citylist v-if="this.$route.path === '/Departments/customer-service' || this.$route.name === 'Cities' || this.$route.name === 'post'"></Citylist>
+              <Procurement v-if="this.$route.path === '/Departments/procurement' || this.$route.name === 'ProcurementPost' "></Procurement>
+              <DepartmentList v-if="this.$route.name === 'Home' || this.$route.name === 'Departments' || this.$route.name === '404'"></DepartmentList>
 
             </ul>
           </nav>
@@ -87,8 +74,9 @@
 <script>
   import bus from '../bus';
   import ajax from '../mixins/ajax';
-  import Card from '../components/Card';
-  import Pagination from '../components/Pagination';
+  import Citylist from '../components/Citylist';
+  import Procurement from '../components/Procurement';
+  import DepartmentList from '../components/DepartmentList';
   import _ from 'lodash';
   import axios from "axios";
 
@@ -110,6 +98,8 @@
       }
     },
 
+    watch: {},
+
     computed: {
       orderedPost: function () {
         return _.orderBy(this.posts, 'slug')
@@ -126,7 +116,7 @@
     mounted: function () {
       this.getPosts();
       this.getMenu();
-      },
+    },
 
     created: function () {
       if (this.$route.name === 'page') {
@@ -256,7 +246,11 @@
       },
     },
 
-    components: {}
+    components: {
+      Citylist,
+      DepartmentList,
+      Procurement
+    }
   }
 </script>
 

@@ -6,6 +6,7 @@ import Post from './views/Post';
 import Home from './components/Home';
 import Departments from './views/Departments';
 import DepartmentPost from './views/DepartmentPost';
+import ProcurementPost from './views/ProcurementPost';
 import bus from './bus';
 
 Vue.use(VueRouter);
@@ -35,6 +36,11 @@ const routes = [
     name: 'DepartmentPost',
     path: '/Departments/:slug',
     component: DepartmentPost
+  }, 
+  {
+    name: 'ProcurementPost',
+    path: '/procurement/:slug',
+    component: ProcurementPost
   },
   {
     name: '404',

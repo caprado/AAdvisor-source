@@ -9,18 +9,6 @@
           </ul>
           <hr>
         <PostBody :content="this.$route.params.content"></PostBody>
-        <div class="render-section">
-          <div v-if="this.$route.params.slug === 'customer-service'">
-            <Feed></Feed>
-          </div>
-          <div v-else-if="this.$route.params.slug === 'procurement'">
-
-          </div>
-          <div v-else-if="this.$route.params.slug === 'it'">
-
-          </div>
-          <div v-else></div>
-        </div>
       </div>
   </div>
 </template>
@@ -33,7 +21,7 @@
   import Feed from '../views/Feed';
 
   export default {
-    name: 'DepartmentPost',
+    name: 'ProcurementPost',
 
     mixins: [utils, ajax],
 
@@ -60,7 +48,7 @@
           let response;
 
           try {
-            response = await this.get(`/departments/${this.$route.params.id}`);
+            response = await this.get(`/procurement/${this.$route.params.id}`);
           } catch (error) {
             this.$router.push({name: '404'});
             return;
