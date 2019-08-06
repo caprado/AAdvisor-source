@@ -3,7 +3,7 @@
     <div class="social_bar">
       <div class="twitter-container">
         <!-- <a class="twitter-timeline" href="https://twitter.com/AthensServices" data-widget-id="589209632482021376"></a> -->
-        <a class="twitter-timeline" data-height="700" href="https://twitter.com/AthensServices?ref_src=twsrc%5Etfw">Tweets by @AthensServices</a>
+        <a class="twitter-timeline" data-height="700" href="https://twitter.com/AthensServices?ref_src=twsrc%5Etfw" data-widget-id="589209632482021376">Tweets by @AthensServices</a>
         <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
       </div>
 

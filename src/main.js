@@ -9,10 +9,10 @@ import store from './store';
 Vue.mixin(utils);
 
 //-- Initialize Google Analytics tracking.
-Vue.use(VueAnalytics, {
-  id: GA_TRACKING_ID,
-  router
-});
+// Vue.use(VueAnalytics, {
+//   id: GA_TRACKING_ID,
+//   router
+// });
 
 new Vue({
   el: '#app',
