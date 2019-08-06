@@ -6,6 +6,7 @@ import Post from './views/Post';
 import Home from './components/Home';
 import Departments from './views/Departments';
 import DepartmentPost from './views/DepartmentPost';
+import Instagram from './components/Instagram';
 import bus from './bus';
 
 Vue.use(VueRouter);
@@ -35,6 +36,11 @@ const routes = [
     name: 'DepartmentPost',
     path: '/Departments/:slug',
     component: DepartmentPost
+  },
+  {
+    name: 'Instagram',
+    path: '/instagram',
+    component: Instagram
   },
   {
     name: '404',

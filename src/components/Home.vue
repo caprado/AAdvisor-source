@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-7" v-if="pages && pages.length > 0"> 
         <!-- eslint-disable-next-line vue/max-attributes-per-line -->
-        <div class="announcements col-sm-8" v-for="pages of pages" v-bind:key="pages"> 
+        <div class="announcements col-sm-8" v-for="pages of pages" v-bind:key="pages.id"> 
           <div class="post-container">
             <h3>{{pages.title.rendered}}</h3>
                 <div class="post-body" v-html="pages.content.rendered"></div>
