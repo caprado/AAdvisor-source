@@ -5,7 +5,7 @@
               alt="Athens Services" width="100" height="31" style="display: inline;">
       <h2><pre>Endpoint API error</pre></h2>
       <p>Database Endpoint was not detected</p>
-      <p>This error has been sent to the web administrator. If the problem persist please escalate this issue by sending an email to <a href="mailto:chris.a.prado789@gmail.com">Christian Prado</a></p>
+      <p>This error has been sent to the web administrator.</p>
       <!-- <input v-model="updatedEndpoint" type="text"> -->
       <!-- <span v-if="error">{{ error }}</span> -->
       <!-- <button type="submit">Save</button> -->
