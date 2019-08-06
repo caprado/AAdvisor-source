@@ -4,16 +4,22 @@
       <div class="post-data">
           <ul>
             <li>
-              <strong style="color: black;" v-html="this.$route.params.title"></strong> 
+              <strong style="color: black;" v-html="this.$route.params.title"></strong> |  <a style="display: inline;" :href='`${ REST_URL }wp-admin/post.php?post=` + this.$route.params.id +`&action=edit`'>Edit</a>
             </li>
           </ul>
           <hr>
         <PostBody :content="this.$route.params.content"></PostBody>
         <div class="render-section">
-          <div v-if="this.$route.params.slug === 'customer-service'">Hi customer serivce.<Feed></Feed></div>
-          <div v-else-if="this.$route.params.slug === 'procurement'">Hi procurement</div>
-          <div v-else-if="this.$route.params.slug === 'it'">Hi IT.</div>
-          <div v-else>Hi {{this.$route.params.title}}</div>
+          <div v-if="this.$route.params.slug === 'customer-service'">
+            <Feed></Feed>
+          </div>
+          <div v-else-if="this.$route.params.slug === 'procurement'">
+
+          </div>
+          <div v-else-if="this.$route.params.slug === 'it'">
+
+          </div>
+          <div v-else></div>
         </div>
       </div>
   </div>
