@@ -10,7 +10,7 @@
       <div class="instagram" id="instafeed">
         <h1 class="timeline-Header-title instagram-block">Instagram Posts <span class="timeline-Header-instagram">by <a
               href="https://www.instagram.com/athensservices/?hl=en">@AthensServices</a></span></h1>
-        <vue-instagram token="7717261160.1677ed0.cc866369d5e046919460de3b7d149a57" :count="6" mediaType="image">
+        <vue-instagram token="7717261160.1677ed0.7822ace4f01f41aa9d4487b621e6c6f7" :count="6" mediaType="image">
           <template slot="feeds" slot-scope="props">
             <!-- <li class="fancy-list"> {{ props.feed.user.username }} </li> -->
             <div class="card">

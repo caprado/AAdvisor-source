@@ -87,14 +87,13 @@ d88P     888  "Y888 888  888  "Y8888  888  888  88888P'      d88P     888  "Y888
 
 // There is no better web brower for developers, right?
 if( isChrome ) {
-	console.log(textChrome, g,b,g,b,g,b,g,b,g,b,g,b,g,b,g,b,g);	
+  console.log(textChrome, g,b,g,b,g,b,g,b,g,b,g,b,g,b,g,b,g);	
+  console.log("%cAthens Advisor",base22MainStyle),
+  console.log("%chttp://athensadvisor.athensservices.com",base22MessageStyle),
+  console.log("%c","font-size:34px; line-height:1.4em;");
 } else {
-	console.log(textOthers, g,b,g,b,g,b,g,b,g,b,g,b,g,b,g,b,g);	
+	
 }
-
-console.log("%cAthens Advisor",base22MainStyle),
-console.log("%chttp://athensadvisor.athensservices.com",base22MessageStyle),
-console.log("%c","font-size:34px; line-height:1.4em;");
 </script>
 
 <style scoped lang="scss">
