@@ -1,20 +1,20 @@
 <template>
-<span>
-  <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom" 
-  v-for="department in orderedPost" :post="posts" :key="department.id">
-  <router-link :to="{
+  <span>
+    <li class="at-standard-menu at-show-all  main-menu-item  menu-item-even menu-item-depth-0  bp-menu bp-events-nav menu-item menu-item-type-custom menu-item-object-custom" 
+    v-for="department in orderedPost" :post="posts" :key="department.id">
+      <router-link :to="{
         name: 'DepartmentPost',
-        params: {
-          slug: department.slug,
-          title: department.title.rendered,
-          id: department.id,
-          content: department.content.rendered
-        }
-      }"
-      v-html="department.title.rendered">
-  </router-link>
-  </li>
-</span>
+          params: {
+            slug: department.slug,
+            title: department.title.rendered,
+            id: department.id,
+            content: department.content.rendered
+          }
+        }"
+        v-html="department.title.rendered">
+      </router-link>
+    </li>
+  </span>
 </template>
 
 <script>
@@ -52,33 +52,12 @@
     },
 
     mounted: function () {
-      // this.getPosts();
       this.getMenu();
     },
 
     created: function () {},
 
     methods: {
-      getPosts: async function () {
-          let response;
-
-          try {
-            response = await this.get(
-              `/departments`
-            );
-            this.totalPages = response.headers['x-wp-totalpages'];
-          } catch (error) {
-              bus.$emit('showUpdater', 'Are you sure that\'s a valid endpoint?');
-              bus.$emit('toggleLoading', false);
-            return;
-          }
-          
-          console.log("Post:", this.posts, "Pages: ", this.totalPages);
-
-          bus.$emit('toggleLoading', false);
-        },
-
-      // Added because rest api already configured via mixins. This was requested after I built out the api as well as async function that included the REST_API variable
       getMenu: function () { axios.get("http://athensadvisor.athensservices.com:81/wp-json/wp/v2/departments", {})
         .then(response => {
           var departments = [];

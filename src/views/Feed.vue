@@ -46,11 +46,7 @@
       this.getPosts();
     },
 
-    created: function () {
-      if (this.$route.name === 'page') {
-        this.page = this.$route.params.page;
-      }
-    },
+    created: function () {},
 
     methods: {
       getPosts: async function () {
@@ -91,14 +87,6 @@
               } catch (error) {
                 console.error(error);
               }
-
-              // response.data.forEach((post) => {
-              //   if (post.featured_media > 0) return;
-              //   this.get(`/media/${post.featured_media}`);
-              // });
-              
-              // Don't want to use above snippet for now. This removes the images on the main city feed showing up
-              // Mostly removed to stop console errors for response.data.forEach returning no data
             }
 
             if (!prevPage) {

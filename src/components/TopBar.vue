@@ -27,7 +27,6 @@
               <Citylist v-if="this.$route.path === '/Departments/customer-service' || this.$route.name === 'Cities' || this.$route.name === 'post'"></Citylist>
               <Procurement v-if="this.$route.path === '/Departments/procurement' || this.$route.name === 'ProcurementPost' "></Procurement>
               <DepartmentList v-if="this.$route.name === 'Home' || this.$route.name === 'Departments' || this.$route.name === '404'"></DepartmentList>
-
             </ul>
           </nav>
         </div>
@@ -119,9 +118,9 @@
     },
 
     created: function () {
-      if (this.$route.name === 'page') {
-        this.page = this.$route.params.page;
-      }
+      // if (this.$route.name === 'page') {
+      //   this.page = this.$route.params.page;
+      // }
     },
 
     methods: {

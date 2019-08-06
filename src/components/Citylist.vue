@@ -59,9 +59,9 @@
     },
 
     created: function () {
-      if (this.$route.name === 'page') {
-        this.page = this.$route.params.page;
-      }
+      // if (this.$route.name === 'page') {
+      //   this.page = this.$route.params.page;
+      // }
     },
 
     methods: {

@@ -9,7 +9,8 @@
     props: {
       content: {
         type: String,
-        required: true
+        required: true,
+        value: undefined
       }
     }
   }
